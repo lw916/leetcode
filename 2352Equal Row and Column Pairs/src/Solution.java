@@ -23,6 +23,8 @@ class Solution {
     }
 
     // 哈希表解题思路
+    // 把矩阵放入哈希表
+    // 首先将矩阵的行放入哈希表中统计次数，哈希表的键可以是将行拼接后的字符串，也可以用各语言内置的数据结构，然后分别统计每一列相等的行有多少，求和即可。
     public int equalPairs2(int[][] grid) {
         int n = grid.length;
         Map<List<Integer>, Integer> cnt = new HashMap<List<Integer>, Integer>();
