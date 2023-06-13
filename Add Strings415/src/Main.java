@@ -1,7 +1,8 @@
 // 可用于字符串加法，链表加法和二进制加法
 // 利用的是字符串与ascii的'0'的差值求大小
+// 从屁股往前推
 class Solution {
-    public String addStrings(String num1, String num2) {
+    public static String addStrings(String num1, String num2) {
         int temp = 0;
         StringBuilder string = new StringBuilder();
         int x = num1.length() - 1;
@@ -13,6 +14,10 @@ class Solution {
             temp /= 10;
         }
         return string.reverse().toString(); // reverse字符串反转
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Solution.addStrings("1234567","11"));
     }
 
 }
