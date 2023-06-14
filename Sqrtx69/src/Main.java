@@ -32,6 +32,8 @@ class Solution {
 
     // 二分查找法：
     public int mySqrt2(int x){
+        int[] nums = new int[]{};
+
         int left = 1, right = x;
         while(left < right){
             int mid = left + (right - left) / 2;
