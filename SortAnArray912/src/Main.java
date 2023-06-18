@@ -26,7 +26,7 @@ class Solution {
 
     }
 
-    // 快排
+    // 快排 超时
     public int[] sortArray1(int[] nums){
         quickSort(nums, 0, nums.length - 1);
         return nums;
@@ -69,10 +69,25 @@ class Solution {
         nums[j] = temp;
     }
 
+    // 冒泡排序 超时
+    int[] sort(int[] nums){
+        for(int i = 0; i < nums.length; i++){
+            boolean flag = true;
+            for(int j = nums.length - 1; j > 0; j--){
+                if(nums[j] < nums[j-1]){
+                    swap(nums, j, j-1);
+                    flag = false;
+                }
+            }
+            if(flag) { return nums; }
+        }
+        return nums;
+    }
+
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] nums = new int[]{4,7,6,8,2,3,1,5};
-        System.out.println(Arrays.toString(s.sortArray1(nums)));
+        System.out.println(Arrays.toString(s.sort(nums)));
     }
 
 }
