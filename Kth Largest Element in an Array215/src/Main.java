@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 class Solution {
-    public int findKthLargest(int[] nums, int k) {
+    public int findKthLargest1(int[] nums, int k) {
         // 使用快排
         quickSort(nums, 0, nums.length - 1);
         return nums[nums.length - k];
@@ -41,7 +41,7 @@ class Solution {
         nums[j] = temp;
     }
 
-    public int find(int[] nums, int k){
+    public int findKthLargest(int[] nums, int k){
         for(int i = 0; i < nums.length - 1; i++){
             for(int j = nums.length - 1; j > 0; j--){
                 if(nums[j] < nums[j-1]){
@@ -55,6 +55,6 @@ class Solution {
     public static void main(String[] args) {
         int[] nums = new int[]{8,5,6,4,7,3,1,2};
         Solution s = new Solution();
-        System.out.println(s.find(nums, 1));
+        System.out.println(s.findKthLargest(nums, 1));
     }
 }
