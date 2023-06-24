@@ -3,7 +3,7 @@ import java.util.List;
 
 class Solution {
     static final int SEG_COUNT = 4;
-    List<String> ans = new ArrayList<String>();
+    List<String> ans = new ArrayList<>();
     int[] segments = new int[SEG_COUNT];
 
     public List<String> restoreIpAddresses(String s) {
@@ -43,6 +43,7 @@ class Solution {
         int addr = 0;
         for (int segEnd = segStart; segEnd < s.length(); ++segEnd) {
             addr = addr * 10 + (s.charAt(segEnd) - '0');
+            // 0XFF 表示二进制1111 1111
             if (addr > 0 && addr <= 0xFF) {
                 segments[segId] = addr;
                 dfs(s, segId + 1, segEnd + 1);
